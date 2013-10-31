@@ -1,0 +1,60 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/main.xhtml">
+
+	<ui:define name="body">
+		<h:form prependId="false">
+
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:commandButton value="#{messages['button.save']}" action="#{alunoEditMB.insert}"
+						rendered="#{!alunoEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}" action="#{alunoEditMB.update}"
+						rendered="#{alunoEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.delete']}" onclick="confirmation.show()"
+						rendered="#{alunoEditMB.updateMode}" type="button" immediate="true" ajax="false" />
+					<p:confirmDialog message="#{messages['label.confirm.delete']}" showEffect="bounce" hideEffect="explode"
+						header="#{messages['label.dialog.delete']}" severity="alert" widgetVar="confirmation">
+						<h:commandButton value="#{messages['button.dialog.yes']}" action="#{alunoEditMB.delete}" immediate="true"
+							ajax="false" />
+						<h:commandButton value="#{messages['button.dialog.no']}" onclick="confirmation.hide()" type="button" />
+					</p:confirmDialog>
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<br />
+
+			<p:fieldset legend="#{messages['aluno.label']}" toggleable="true" toggleSpeed="500">
+				<h:panelGrid id="fields" columns="3">
+					
+					<h:outputLabel value="#{messages['aluno.label.matricula']}: " for="Matricula" styleClass="text-input" />
+					<h:outputText id="Matricula" value="#{alunoEditMB.bean.matricula}" />
+					<p:message for="Matricula" />
+					
+					<h:outputLabel value="#{messages['aluno.label.dataMatricula']}: " for="dataMatricula" styleClass="text-input" />
+					<p:calendar id="dataMatricula" value="#{alunoEditMB.bean.dataMatricula}"
+					   pattern="#{messages['label.date.pattern']}" navigator="true" showButtonPanel="true"
+					   locale="#{currentLocale}" title="#{messages['aluno.alt.dataMatricula']}" />
+					   <p:message for="dataMatricula" />
+								
+					<h:outputLabel value="#{messages['aluno.label.nome']}: " for="nome" styleClass="text-input" />
+					<h:inputText id="nome" value="#{alunoEditMB.bean.nome}"
+						title="#{messages['aluno.alt.nome']}" />
+					<p:message for="nome" />
+					
+					<h:outputLabel value="#{messages['aluno.label.cPF']}: " for="cPF" styleClass="text-input" />
+					<h:inputText id="cPF" value="#{alunoEditMB.bean.CPF}"
+						title="#{messages['aluno.alt.cPF']}" />
+					<p:message for="cPF" />
+					
+					<h:outputLabel value="#{messages['aluno.label.identidade']}: " for="identidade" styleClass="text-input" />
+					<h:inputText id="identidade" value="#{alunoEditMB.bean.identidade}"
+						title="#{messages['aluno.alt.identidade']}" />
+					<p:message for="identidade" />
+					
+				</h:panelGrid>
+			</p:fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
