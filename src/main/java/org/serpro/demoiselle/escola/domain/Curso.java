@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * Entity implementation class for Entity: Curso
  *
@@ -23,6 +25,8 @@ public class Curso implements Serializable {
 	@JoinTable(name="Aula")
 	private List<Aula> aulas;
 	
+	@Column
+	@NotEmpty
 	private Integer duracao;
 	
 	public Integer getDuracao() {
