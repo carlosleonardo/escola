@@ -3,13 +3,16 @@ package org.serpro.demoiselle.escola.domain;
 import java.io.Serializable;
 import java.lang.Long;
 import java.util.Date;
+
 import javax.persistence.*;
+
 import org.serpro.demoiselle.escola.domain.Pessoa;
 
 /**
  * Entity implementation class for Entity: Aluno
  * 
  */
+@SuppressWarnings("serial")
 @Entity
 public class Aluno extends Pessoa implements Serializable {
 
@@ -20,10 +23,6 @@ public class Aluno extends Pessoa implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataMatricula;
 	
-	private AulaPK idAula;
-	
-	private static final long serialVersionUID = 1L;
-
 	public Aluno() {
 		super();
 	}
@@ -42,14 +41,6 @@ public class Aluno extends Pessoa implements Serializable {
 
 	public void setDataMatricula(Date dataMatricula) {
 		this.dataMatricula = dataMatricula;
-	}
-
-	public AulaPK getIdAula() {
-		return idAula;
-	}
-
-	public void setIdAula(AulaPK idAula) {
-		this.idAula = idAula;
 	}
 
 }
