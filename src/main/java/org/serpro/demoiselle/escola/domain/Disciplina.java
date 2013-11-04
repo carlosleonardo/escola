@@ -1,7 +1,9 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Entity implementation class for Entity: Disciplina
@@ -16,8 +18,12 @@ public class Disciplina implements Serializable {
 	@GeneratedValue
 	private Long id;
 
+	@Column
+	@NotNull
 	private String nome;
 	
+	@Column
+	@NotNull(message="Deve ser informada!")
 	private Integer cargaHoraria;
 	
 	private String descricao;
