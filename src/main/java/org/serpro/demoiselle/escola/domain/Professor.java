@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.ForeignKey;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -28,7 +29,7 @@ public class Professor extends Pessoa implements Serializable {
 	private Long id;
 	
 	@Column
-	@NotBlank
+	@ForeignKey(name = "ID")
 	private Long idDisciplina;
 
 	public Long getId() {
