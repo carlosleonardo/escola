@@ -20,6 +20,8 @@ public class Aluno extends Pessoa implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataMatricula;
 	
+	private AulaPK idAula;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Aluno() {
@@ -40,6 +42,14 @@ public class Aluno extends Pessoa implements Serializable {
 
 	public void setDataMatricula(Date dataMatricula) {
 		this.dataMatricula = dataMatricula;
+	}
+
+	public AulaPK getIdAula() {
+		return idAula;
+	}
+
+	public void setIdAula(AulaPK idAula) {
+		this.idAula = idAula;
 	}
 
 }
