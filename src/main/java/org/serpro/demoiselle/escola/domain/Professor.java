@@ -1,9 +1,14 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * Entity implementation class for Entity: Professor
@@ -22,6 +27,8 @@ public class Professor extends Pessoa implements Serializable {
 	@GeneratedValue
 	private Long id;
 	
+	@Column
+	@NotBlank
 	private Long idDisciplina;
 
 	public Long getId() {
