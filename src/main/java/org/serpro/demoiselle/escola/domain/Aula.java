@@ -16,8 +16,6 @@ public class Aula implements Serializable {
 	@EmbeddedId
 	private AulaPK idAula;
 
-	private List<Aluno> alunos;
-	
 	public Aula() {
 		super();
 	}
@@ -28,10 +26,6 @@ public class Aula implements Serializable {
 
 	public void setIdAula(AulaPK idAula) {
 		this.idAula = idAula;
-	}
-
-	public List<Aluno> getAlunos() {
-		return alunos;
 	}
 
 }

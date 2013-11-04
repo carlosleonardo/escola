@@ -20,15 +20,8 @@ public class Curso implements Serializable {
 	@GeneratedValue
 	private Long id;
 	
-	private List<Aula> aulas;
-	
 	private Integer duracao;
 	
-	public List<Aula> getAulas()
-	{
-		return aulas;
-	}
-
 	public Integer getDuracao() {
 		return duracao;
 	}
