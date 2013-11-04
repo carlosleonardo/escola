@@ -16,9 +16,12 @@ public class Curso implements Serializable {
 		super();
 	}
    
-	@Id
-	@GeneratedValue
-	private Long id;
+	@EmbeddedId
+	private CursoPK id;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="Aula")
+	private List<Aula> aulas;
 	
 	private Integer duracao;
 	
@@ -30,8 +33,12 @@ public class Curso implements Serializable {
 		this.duracao = duracao;
 	}
 
-	public Long getId() {
-		return id;
+	public List<Aula> getAulas() {
+		return aulas;
 	}
-	
+
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+
 }
