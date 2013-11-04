@@ -1,24 +1,39 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
-import java.lang.String;
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import br.gov.frameworkdemoiselle.validation.annotation.Cpf;
 
 /**
  * Entity implementation class for Entity: Pessoa
  * 
  */
+@SuppressWarnings("serial")
 @MappedSuperclass
 public class Pessoa implements Serializable {
 
+	@Column
+	@NotNull(message="Informe nome")
+	@Size(min=20, max=100, message="Nome deve ter entre 20 e 100 caracteres")
 	private String Nome;
+	
+	@Column
+	@Cpf
 	private String CPF;
+	
+	@Column
 	private String Identidade;
+	
+	@Column
 	private Date dataNascimento;
-	private static final long serialVersionUID = 1L;
-
+	
 	public Pessoa() {
 		super();
 	}
