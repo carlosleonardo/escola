@@ -10,6 +10,8 @@
 			<class>org.serpro.demoiselle.escola.domain.Aula</class>
 			<class>org.serpro.demoiselle.escola.domain.Curso</class>
 		
+			<class>org.serpro.demoiselle.escola.domain.Disciplina</class>
+		
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="false" />
