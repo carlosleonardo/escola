@@ -21,8 +21,7 @@ public class Curso implements Serializable {
 	@EmbeddedId
 	private CursoPK id;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="Aula")
+	@OneToMany
 	private List<Aula> aulas;
 	
 	@Column
