@@ -3,11 +3,8 @@ package org.serpro.demoiselle.escola.domain;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -20,8 +17,7 @@ public class Aula implements Serializable {
 	@EmbeddedId
 	private AulaPK idAula;
 
-	@OneToMany(cascade={CascadeType.ALL})
-	@JoinTable(name="Aluno")
+	@OneToMany
 	private List<Aluno> alunos;
 	
 	public Aula() {
