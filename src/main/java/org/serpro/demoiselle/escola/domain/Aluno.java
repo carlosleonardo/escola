@@ -2,7 +2,7 @@ package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
 import java.lang.Long;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.*;
 
@@ -20,7 +20,6 @@ public class Aluno extends Pessoa implements Serializable {
 	@GeneratedValue
 	private Long matricula;
 	
-	@Temporal(TemporalType.DATE)
 	private Date dataMatricula;
 	
 	public Aluno() {

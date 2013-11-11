@@ -2,14 +2,10 @@ package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.annotations.ForeignKey;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Professor
@@ -27,10 +23,9 @@ public class Professor extends Pessoa implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	@Column
-	@ForeignKey(name = "ID")
-	private Long idDisciplina;
+
+	@OneToOne
+	private Disciplina disciplina;
 
 	public Long getId() {
 		return id;
@@ -39,12 +34,5 @@ public class Professor extends Pessoa implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public Long getIdDisciplina() {
-		return idDisciplina;
-	}
-
-	public void setIdDisciplina(Long idDisciplina) {
-		this.idDisciplina = idDisciplina;
-	}
+	
 }

@@ -1,6 +1,7 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,17 +19,18 @@ public class Disciplina implements Serializable {
 	@GeneratedValue
 	private Long id;
 
-	@Column
+	@Column(name="NOME")
 	@NotNull
 	private String nome;
 	
-	@Column
+	@Column(name="CARGA_HORARIA")
 	@NotNull(message="Deve ser informada!")
 	private Integer cargaHoraria;
 	
 	private String descricao;
 	
-	private Long idProfessor;
+	@OneToMany
+	private List<Professor> professores;
 	
 	public Disciplina() {
 		super();
@@ -62,11 +64,4 @@ public class Disciplina implements Serializable {
 		this.nome = nome;
 	}
 
-	public Long getIdProfessor() {
-		return idProfessor;
-	}
-
-	public void setIdProfessor(Long idProfessor) {
-		this.idProfessor = idProfessor;
-	}
 }

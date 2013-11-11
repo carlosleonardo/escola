@@ -40,8 +40,4 @@ public class Curso implements Serializable {
 		return aulas;
 	}
 
-	public void setAulas(List<Aula> aulas) {
-		this.aulas = aulas;
-	}
-
 }

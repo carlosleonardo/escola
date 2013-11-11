@@ -1,6 +1,7 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,13 +18,8 @@ import javax.persistence.TemporalType;
 @SuppressWarnings("serial")
 @Embeddable
 public class AulaPK implements Serializable {
-	
-	@Temporal(TemporalType.TIME)
-	private Date horaInicio;
-	
-	@Temporal(TemporalType.TIME)
-	private Date horaFim;
-	
+	private Time horaInicio;
+	private Time horaFim;
 	private Long idProfessor;
 	private Long idDisciplina;
 	private Long idSala;
@@ -41,16 +37,16 @@ public class AulaPK implements Serializable {
 		this.idDisciplina = idDisciplina;
 	}
 	
-	public Date getHoraInicio() {
+	public Time getHoraInicio() {
 		return horaInicio;
 	}
-	public void setHoraInicio(Date horaInicio) {
+	public void setHoraInicio(Time horaInicio) {
 		this.horaInicio = horaInicio;
 	}
-	public Date getHoraFim() {
+	public Time getHoraFim() {
 		return horaFim;
 	}
-	public void setHoraFim(Date horaFim) {
+	public void setHoraFim(Time horaFim) {
 		this.horaFim = horaFim;
 	}
 	public Long getIdSala() {

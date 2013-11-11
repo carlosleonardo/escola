@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Aula
@@ -15,21 +16,16 @@ import javax.persistence.OneToMany;
 @Entity
 public class Aula implements Serializable {
 	@EmbeddedId
-	private AulaPK idAula;
+	private AulaPK id;
 
 	@OneToMany
 	private List<Aluno> alunos;
 	
+	@OneToOne
+	private Disciplina disciplina;
+	
 	public Aula() {
 		super();
-	}
-
-	public AulaPK getIdAula() {
-		return idAula;
-	}
-
-	public void setIdAula(AulaPK idAula) {
-		this.idAula = idAula;
 	}
 
 	public List<Aluno> getAlunos() {
@@ -38,6 +34,14 @@ public class Aula implements Serializable {
 
 	public void setAlunos(List<Aluno> alunos) {
 		this.alunos = alunos;
+	}
+
+	public AulaPK getId() {
+		return id;
+	}
+
+	public void setId(AulaPK id) {
+		this.id = id;
 	}
 
 }
