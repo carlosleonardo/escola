@@ -3,9 +3,11 @@ package org.serpro.demoiselle.escola.domain;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.*;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Curso
@@ -14,30 +16,18 @@ import org.hibernate.validator.constraints.NotEmpty;
 @SuppressWarnings("serial")
 @Entity
 public class Curso implements Serializable {
-	public Curso() {
-		super();
-	}
    
-	@EmbeddedId
-	private CursoPK id;
+	@Id
+	@GeneratedValue
+	private Long id;
 	
 	@OneToMany
 	private List<Aula> aulas;
 	
 	@Column
-	@NotEmpty
-	private Integer duracao;
+	private String nome;
 	
-	public Integer getDuracao() {
-		return duracao;
-	}
-
-	public void setDuracao(Integer duracao) {
-		this.duracao = duracao;
-	}
-
-	public List<Aula> getAulas() {
-		return aulas;
-	}
-
+	@Column
+	private String descricao;
+	
 }

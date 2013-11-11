@@ -22,6 +22,9 @@ public class Aluno extends Pessoa implements Serializable {
 	
 	private Date dataMatricula;
 	
+	@OneToOne
+	private Curso curso;
+	
 	public Aluno() {
 		super();
 	}

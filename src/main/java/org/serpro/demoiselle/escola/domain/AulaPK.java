@@ -2,12 +2,8 @@ package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
 import java.sql.Time;
-import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 
 /**
@@ -20,22 +16,6 @@ import javax.persistence.TemporalType;
 public class AulaPK implements Serializable {
 	private Time horaInicio;
 	private Time horaFim;
-	private Long idProfessor;
-	private Long idDisciplina;
-	private Long idSala;
-	
-	public Long getIdProfessor() {
-		return idProfessor;
-	}
-	public void setIdProfessor(Long idProfessor) {
-		this.idProfessor = idProfessor;
-	}
-	public Long getIdDisciplina() {
-		return idDisciplina;
-	}
-	public void setIdDisciplina(Long idDisciplina) {
-		this.idDisciplina = idDisciplina;
-	}
 	
 	public Time getHoraInicio() {
 		return horaInicio;
@@ -49,13 +29,6 @@ public class AulaPK implements Serializable {
 	public void setHoraFim(Time horaFim) {
 		this.horaFim = horaFim;
 	}
-	public Long getIdSala() {
-		return idSala;
-	}
-	public void setIdSala(Long idSala) {
-		this.idSala = idSala;
-	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -63,11 +36,6 @@ public class AulaPK implements Serializable {
 		result = prime * result + ((horaFim == null) ? 0 : horaFim.hashCode());
 		result = prime * result
 				+ ((horaInicio == null) ? 0 : horaInicio.hashCode());
-		result = prime * result
-				+ ((idDisciplina == null) ? 0 : idDisciplina.hashCode());
-		result = prime * result
-				+ ((idProfessor == null) ? 0 : idProfessor.hashCode());
-		result = prime * result + ((idSala == null) ? 0 : idSala.hashCode());
 		return result;
 	}
 	@Override
@@ -89,21 +57,7 @@ public class AulaPK implements Serializable {
 				return false;
 		} else if (!horaInicio.equals(other.horaInicio))
 			return false;
-		if (idDisciplina == null) {
-			if (other.idDisciplina != null)
-				return false;
-		} else if (!idDisciplina.equals(other.idDisciplina))
-			return false;
-		if (idProfessor == null) {
-			if (other.idProfessor != null)
-				return false;
-		} else if (!idProfessor.equals(other.idProfessor))
-			return false;
-		if (idSala == null) {
-			if (other.idSala != null)
-				return false;
-		} else if (!idSala.equals(other.idSala))
-			return false;
 		return true;
 	}
+
 }
