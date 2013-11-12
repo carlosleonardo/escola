@@ -23,58 +23,16 @@ public class Disciplina implements Serializable {
 	@NotNull
 	private String nome;
 	
-	@Column(name="CARGA_HORARIA")
-	@NotNull
-	private Integer cargaHoraria;
-	
 	@Column(name="DESCRICAO")
 	private String descricao;
 	
 	@OneToMany
 	private List<Professor> professores;
 	
-	@ManyToOne
-	private Aula aula;
-	
-	public Disciplina() {
-		super();
-	}
-
-	public Integer getCargaHoraria() {
-		return cargaHoraria;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setCargaHoraria(Integer cargaHoraria) {
-		this.cargaHoraria = cargaHoraria;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((aula == null) ? 0 : aula.hashCode());
-		result = prime * result
-				+ ((cargaHoraria == null) ? 0 : cargaHoraria.hashCode());
 		result = prime * result
 				+ ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -93,16 +51,6 @@ public class Disciplina implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		if (aula == null) {
-			if (other.aula != null)
-				return false;
-		} else if (!aula.equals(other.aula))
-			return false;
-		if (cargaHoraria == null) {
-			if (other.cargaHoraria != null)
-				return false;
-		} else if (!cargaHoraria.equals(other.cargaHoraria))
-			return false;
 		if (descricao == null) {
 			if (other.descricao != null)
 				return false;

@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Sala {
@@ -13,11 +14,17 @@ public class Sala {
 	private Long id;
 	
 	@Column
-	private Time horaInicio;
+	private Time inicio;
 	
 	@Column
-	private Time horaFim;
+	private Time fim;
+
+	@OneToOne
+	private Aula aula;
 	
-	@Column
-	private boolean reservado;
+	@OneToOne
+	private Disciplina disciplina;
+	
+	@OneToOne
+	private Professor professor;
 }
