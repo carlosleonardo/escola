@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,6 +33,15 @@ public class Pessoa implements Serializable {
 	
 	@Column(name="DATA_NASCIMENTO")
 	private Date dataNascimento;
+	
+	@Column
+	@NotNull
+	@Size(max=20)
+	private String telefone;
+	
+	@Column
+	@Size(max=100)
+	private String Endereco;
 	
 	public Pessoa() {
 		super();
