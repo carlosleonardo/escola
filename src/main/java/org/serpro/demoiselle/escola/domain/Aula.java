@@ -3,7 +3,6 @@ package org.serpro.demoiselle.escola.domain;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,30 +30,16 @@ public class Aula implements Serializable {
 	@ManyToOne
 	private Curso curso;
 	
-	@OneToMany
-	private List<Aluno> alunos;
-	
-	@OneToOne
-	private Sala sala;
-	
-	public Aula() {
-		super();
-	}
-
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((alunos == null) ? 0 : alunos.hashCode());
+		result = prime * result + ((curso == null) ? 0 : curso.hashCode());
+		result = prime * result
+				+ ((disciplina == null) ? 0 : disciplina.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result
+				+ ((professor == null) ? 0 : professor.hashCode());
 		return result;
 	}
 
@@ -67,15 +52,25 @@ public class Aula implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Aula other = (Aula) obj;
-		if (alunos == null) {
-			if (other.alunos != null)
+		if (curso == null) {
+			if (other.curso != null)
 				return false;
-		} else if (!alunos.equals(other.alunos))
+		} else if (!curso.equals(other.curso))
+			return false;
+		if (disciplina == null) {
+			if (other.disciplina != null)
+				return false;
+		} else if (!disciplina.equals(other.disciplina))
 			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
+			return false;
+		if (professor == null) {
+			if (other.professor != null)
+				return false;
+		} else if (!professor.equals(other.professor))
 			return false;
 		return true;
 	}
