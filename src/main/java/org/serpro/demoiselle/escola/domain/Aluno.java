@@ -20,29 +20,6 @@ public class Aluno extends Pessoa implements Serializable {
 	@GeneratedValue
 	private Long matricula;
 	
+	@Column
 	private Date dataMatricula;
-	
-	@OneToOne
-	private Curso curso;
-	
-	public Aluno() {
-		super();
-	}
-
-	public Long getMatricula() {
-		return this.matricula;
-	}
-
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
-	}
-
-	public Date getDataMatricula() {
-		return this.dataMatricula;
-	}
-
-	public void setDataMatricula(Date dataMatricula) {
-		this.dataMatricula = dataMatricula;
-	}
-
 }
