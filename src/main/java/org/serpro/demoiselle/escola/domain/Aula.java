@@ -27,7 +27,7 @@ public class Aula implements Serializable {
 	@OneToOne
 	private Professor professor;
 	
-	@ManyToOne
+	@OneToOne
 	private Curso curso;
 	
 	@Override
