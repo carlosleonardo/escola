@@ -32,11 +32,6 @@
 					<h:outputText id="id" value="#{professorEditMB.bean.id}" />
 					<p:message for="id" />
 					
-					<h:outputLabel value="#{messages['professor.label.idDisciplina']}: " for="idDisciplina" styleClass="text-input" />
-					<h:inputText id="idDisciplina" value="#{professorEditMB.bean.idDisciplina}"
-						title="#{messages['professor.alt.idDisciplina']}" />
-					<p:message for="idDisciplina" />
-					
 					<h:outputLabel value="#{messages['professor.label.nome']}: " for="nome" styleClass="text-input" />
 					<h:inputText id="nome" value="#{professorEditMB.bean.nome}"
 						title="#{messages['professor.alt.nome']}" />
@@ -57,7 +52,16 @@
 					   pattern="#{messages['label.date.pattern']}" navigator="true" showButtonPanel="true"
 					   locale="#{currentLocale}" title="#{messages['professor.alt.dataNascimento']}" />
 					   <p:message for="dataNascimento" />
-								
+					   
+					<h:outputLabel value="#{messages['professor.label.telefone']}: " for="telefone" styleClass="text-input" />
+					<h:inputText id="telefone" value="#{professorEditMB.bean.telefone}"
+						title="#{messages['professor.alt.telefone']}" />
+					   <p:message for="telefone" />
+					   
+					<h:outputLabel value="#{messages['professor.label.endereco']}: " for="endereco" styleClass="text-input" />
+					<h:inputText id="endereco" value="#{professorEditMB.bean.endereco}"
+						title="#{messages['professor.alt.endereco']}" />
+					   <p:message for="endereco" />					   								
 				</h:panelGrid>
 			</p:fieldset>
 		</h:form>

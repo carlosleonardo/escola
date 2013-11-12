@@ -41,26 +41,10 @@
 					</h:commandLink>
 				</p:column>
 						
-				<p:column sortBy="#{bean.cargaHoraria}">
-					<f:facet name="header">#{messages['disciplina.label.cargaHoraria']}</f:facet>
-					<h:commandLink action="#{disciplinaListMB.getNextView}" actionListener="#{disciplinaListMB.clear}">
-						<h:outputText value="#{bean.cargaHoraria}" />
-						<f:param name="id" value="#{bean.id}" />
-					</h:commandLink>
-				</p:column>
-						
 				<p:column sortBy="#{bean.descricao}">
 					<f:facet name="header">#{messages['disciplina.label.descricao']}</f:facet>
 					<h:commandLink action="#{disciplinaListMB.getNextView}" actionListener="#{disciplinaListMB.clear}">
 						<h:outputText value="#{bean.descricao}" />
-						<f:param name="id" value="#{bean.id}" />
-					</h:commandLink>
-				</p:column>
-						
-				<p:column sortBy="#{bean.idProfessor}">
-					<f:facet name="header">#{messages['disciplina.label.idProfessor']}</f:facet>
-					<h:commandLink action="#{disciplinaListMB.getNextView}" actionListener="#{disciplinaListMB.clear}">
-						<h:outputText value="#{bean.idProfessor}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>

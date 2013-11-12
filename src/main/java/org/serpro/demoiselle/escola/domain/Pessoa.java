@@ -1,11 +1,12 @@
 package org.serpro.demoiselle.escola.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -32,6 +33,7 @@ public class Pessoa implements Serializable {
 	private String Identidade;
 	
 	@Column(name="DATA_NASCIMENTO")
+	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
 	
 	@Column
@@ -41,7 +43,7 @@ public class Pessoa implements Serializable {
 	
 	@Column
 	@Size(max=100)
-	private String Endereco;
+	private String endereco;
 	
 	public Pessoa() {
 		super();
@@ -79,6 +81,22 @@ public class Pessoa implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,6 +107,10 @@ public class Pessoa implements Serializable {
 		result = prime * result + ((Nome == null) ? 0 : Nome.hashCode());
 		result = prime * result
 				+ ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
+		result = prime * result
+				+ ((endereco == null) ? 0 : endereco.hashCode());
+		result = prime * result
+				+ ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
 
@@ -120,6 +142,16 @@ public class Pessoa implements Serializable {
 			if (other.dataNascimento != null)
 				return false;
 		} else if (!dataNascimento.equals(other.dataNascimento))
+			return false;
+		if (endereco == null) {
+			if (other.endereco != null)
+				return false;
+		} else if (!endereco.equals(other.endereco))
+			return false;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
 			return false;
 		return true;
 	}

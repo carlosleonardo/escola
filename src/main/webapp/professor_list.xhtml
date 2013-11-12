@@ -33,14 +33,6 @@
 					<h:outputText value="#{bean.id}" />
 				</p:column>
 						
-				<p:column sortBy="#{bean.idDisciplina}">
-					<f:facet name="header">#{messages['professor.label.idDisciplina']}</f:facet>
-					<h:commandLink action="#{professorListMB.getNextView}" actionListener="#{professorListMB.clear}">
-						<h:outputText value="#{bean.idDisciplina}" />
-						<f:param name="id" value="#{bean.id}" />
-					</h:commandLink>
-				</p:column>
-						
 				<p:column sortBy="#{bean.nome}">
 					<f:facet name="header">#{messages['professor.label.nome']}</f:facet>
 					<h:commandLink action="#{professorListMB.getNextView}" actionListener="#{professorListMB.clear}">

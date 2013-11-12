@@ -53,6 +53,22 @@
 						title="#{messages['aluno.alt.identidade']}" />
 					<p:message for="identidade" />
 					
+					<h:outputLabel value="#{messages['aluno.label.dataNascimento']}: " for="dataNascimento" styleClass="text-input" />
+					<p:calendar id="dataNascimento" value="#{alunoEditMB.bean.dataNascimento}"
+					   pattern="#{messages['label.date.pattern']}" navigator="true" showButtonPanel="true"
+					   locale="#{currentLocale}" title="#{messages['aluno.alt.dataNascimento']}" />
+					   <p:message for="dataNascimento" />
+					   
+					<h:outputLabel value="#{messages['aluno.label.telefone']}: " for="telefone" styleClass="text-input" />
+					<h:inputText id="telefone" value="#{alunoEditMB.bean.telefone}"
+						title="#{messages['aluno.alt.telefone']}" />
+					   <p:message for="telefone" />
+					   
+					<h:outputLabel value="#{messages['aluno.label.endereco']}: " for="endereco" styleClass="text-input" />
+					<h:inputText id="endereco" value="#{alunoEditMB.bean.endereco}"
+						title="#{messages['aluno.alt.endereco']}" />
+					   <p:message for="endereco" />
+					
 				</h:panelGrid>
 			</p:fieldset>
 		</h:form>

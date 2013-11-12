@@ -1,11 +1,14 @@
 package org.serpro.demoiselle.escola.domain;
 
-import java.sql.Time;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Sala {
@@ -14,10 +17,12 @@ public class Sala {
 	private Long id;
 	
 	@Column
-	private Time inicio;
+	@Temporal(TemporalType.TIME)
+	private Date inicio;
 	
 	@Column
-	private Time fim;
+	@Temporal(TemporalType.TIME)
+	private Date fim;
 
 	@OneToOne
 	private Aula aula;
